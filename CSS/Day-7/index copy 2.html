@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-7</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .test-border {
+        border: 1px solid black;
+      }
+
+      main {
+        display: flex;
+        background-color: rgb(253, 187, 187);
+        height: 100vh;
+        align-items: center; /* cross axis work for single line*/
+        align-content: center; /* cross axis work for single/multi line*/
+        flex-wrap: wrap;
+      }
+
+      section {
+        flex-basis: 20%;
+        height: 10vh;
+      }
+      .item-4 {
+        align-self: flex-start;
+
+        /*flex-shrink: ;
+        flex-grow: ;
+        order: ;*/
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="test-border">Section 1</section>
+      <section class="test-border">Section 2</section>
+      <section class="test-border">Section 3</section>
+      <section class="test-border item-4">Section 4</section>
+    </main>
+  </body>
+</html>

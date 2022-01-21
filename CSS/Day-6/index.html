@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-5</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        background-color: rgb(248, 181, 181);
+        display: flex;
+        flex-direction: column;
+      }
+      .header,
+      .footer {
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        padding: 1.25rem;
+      }
+
+      .company {
+        border: 1px solid;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem;
+      }
+      .company-info {
+        border: 1px solid;
+        height: 60vh;
+        width: 30%;
+      }
+      .client {
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .client-info {
+        border: 1px solid black;
+        padding: 1rem 0.8rem;
+        margin: 0 0.2rem;
+      }
+      .carousel {
+        height: 40vh;
+        width: 100%;
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">Header</header>
+      <section class="carousel">carousel</section>
+      <section class="company">
+        <section class="company-info">Company Info-1</section>
+        <section class="company-info">Company Info-2</section>
+        <section class="company-info">Company Info-3</section>
+      </section>
+
+      <section class="client">
+        <section class="client-info">Client Info 1</section>
+        <section class="client-info">Client Info2</section>
+        <section class="client-info">Client Info 3</section>
+        <section class="client-info">Client Info 4</section>
+        <section class="client-info">Client Info 5</section>
+      </section>
+      <footer class="footer">Footer</footer>
+    </main>
+  </body>
+</html>
