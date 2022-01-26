@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-7</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn {
+        padding: 1rem 6rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        /*state*/
+        /* transition:; */
+        transition-property: background-color, color, padding;
+        transition-duration: 0.5s, 0.5s, 0.5s;
+        /* transition: background-color 0.5s, color 0.5s, padding 0.5s; */
+
+        /*state less*/
+      }
+
+      .btn:hover {
+        background-color: green;
+        color: white;
+        padding: 1rem 8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <button class="btn">Button</button>
+    </section>
+  </body>
+</html>

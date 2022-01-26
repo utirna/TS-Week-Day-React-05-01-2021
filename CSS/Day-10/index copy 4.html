@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-7</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn {
+        padding: 1rem 6rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        /*transform: rotate();
+        transform: translate();
+        transform: scale();
+        transform: skew();*/
+        transform: perspective(500px);
+        transform-origin: center;
+
+        /*state*/
+        /* transition:; */
+        transition-property: transform;
+        transition-duration: 2s;
+
+        /*state less*/
+      }
+
+      .btn:hover {
+        transform: perspective(500px) rotateZ(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <button class="btn">Button</button>
+    </section>
+  </body>
+</html>
