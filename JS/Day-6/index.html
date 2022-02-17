@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 6</title>
+  </head>
+  <body>
+    <script>
+      //collections of array & jsObject && array methods
+      var BatchList = [
+        {
+          b_name: "React (MERN) Full Stack",
+          b_time: "8:00 am",
+          b_duration: 6,
+          student_count: 10,
+        },
+        {
+          b_name: "React (MERN) Full Stack",
+          b_time: "11:00 am",
+          b_duration: 3,
+          student_count: 15,
+        },
+        {
+          b_name: "Font End",
+          b_time: "5:00 pm",
+          b_duration: 1.5,
+          student_count: 30,
+        },
+        {
+          b_name: "Node JS API",
+          b_time: "3:00 pm",
+          b_duration: 3,
+          student_count: 5,
+        },
+      ]; // object array | JSON array
+
+      // method changing
+      // accumulate data = reduce()
+
+      var data = BatchList.reduce(function (preValue, currentValue) {
+        return (preValue += currentValue.student_count);
+      }, 0); // callback,default
+
+      //print data
+      console.log(data);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 3</title>
+  </head>
+  <body>
+    <script>
+      // closure function
+      var varOne = 10;
+      var varTwo = 5;
+
+      function sub(numberOne, numberTwo) {
+        var result = numberOne - numberTwo;
+
+        function innerFunction() {
+          result = result + 1;
+          return result; // lexical scope var
+        }
+
+        return innerFunction;
+      }
+
+      var fun = sub(10, 5);
+      var subResult = fun();
+      fun();
+      subResult = fun(); //8
+
+      var funOne = sub(5, 3);
+      subResultOne = funOne(); //3
+
+      console.log(subResult); //8
+      console.log(subResultOne); //6
+    </script>
+  </body>
+</html>

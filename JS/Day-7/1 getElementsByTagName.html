@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 7</title>
+  </head>
+  <body>
+    <h1 class="changeText">Hello JS</h1>
+    <h1>Hello JS</h1>
+    <h1>Hello JS</h1>
+    <section><h1>Hello JS</h1></section>
+    <p class="changeText">Hello</p>
+    <script>
+      //DOM ==> document object model
+      // collection array
+
+      // var h1List = document.getElementsByTagName("h1");
+      var h1List = document.getElementsByClassName("changeText");
+      // HTMlCollection i.e array
+      console.log(h1List);
+
+      for (var value of h1List) {
+        value.innerHTML = "This is from js";
+      }
+
+      /*
+      document.getElementsByClassName()
+      document.getElementById()
+
+      document.querySelector()
+      document.querySelectorAll()*/
+    </script>
+  </body>
+</html>

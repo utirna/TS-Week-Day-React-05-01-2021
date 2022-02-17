@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 5</title>
+  </head>
+  <body>
+    <script>
+      //collections of array & jsObject
+      var BatchList = [
+        {
+          b_name: "React (MERN) Full Stack",
+          b_time: "8:00 am",
+          b_duration: 6,
+          student_count: 10,
+        },
+        {
+          b_name: "Advance JavaScript",
+          b_time: "11:00 am",
+          b_duration: 3,
+          student_count: 15,
+        },
+        {
+          b_name: "Font End",
+          b_time: "5:00 pm",
+          b_duration: 1.5,
+          student_count: 30,
+        },
+        {
+          b_name: "Node JS API",
+          b_time: "3:00 pm",
+          b_duration: 3,
+          student_count: 5,
+        },
+      ]; // object array | JSON array
+
+      // print list of array
+      /*for, while, do while we don't use it*/
+
+      //1. forEach
+      BatchList.forEach(function (value, index) {
+        console.log(value.b_name, index);
+      });
+
+      /*
+      array & logic 
+      
+        add data array ==>  array.push()
+        delete data array ===>  array.splice()
+
+        searching ==>
+              array.find()
+              array.findIndex()
+              array.filter()
+
+        convert to other array format ===> array.map()
+
+        convert to string format ===> array.join()
+
+        accumulate data of array ===> reduce()
+      */
+    </script>
+  </body>
+</html>

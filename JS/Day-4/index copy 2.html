@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 3</title>
+  </head>
+  <body>
+    <script>
+      // function exp
+      var numberOne = 10;
+      var numberTwo = 20;
+
+      // add
+      function add(varOne, varTwo, callback) {
+        var result = varOne + varTwo;
+        callback(result);
+      }
+
+      // div
+      var div = function (varOne, varTwo, callback) {
+        var result = varOne / varTwo;
+        callback(result);
+      };
+
+      // mul
+      function mul(varOne, varTwo, callback) {
+        var result = varOne * varTwo;
+        callback(result);
+      }
+
+      add(numberOne, numberTwo, function (addResult) {
+        //addResult = 10,20 = 30
+        div(addResult, numberTwo, function (divResult) {
+          // divResult = //30,20 = 1.5
+          mul(divResult, numberTwo, function (mulResult) {
+            //mulResult = 1.5,20 = 30
+            console.log(mulResult); //final result
+          });
+        });
+      });
+
+      add(10, 20, function (addResult) {
+        var pie = 3.14;
+        var result = pie * addResult;
+        console.log(result);
+      });
+
+      console.log("hello");
+    </script>
+  </body>
+</html>

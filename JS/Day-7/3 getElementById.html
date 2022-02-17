@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 7</title>
+  </head>
+  <body>
+    <!--  -->
+    <h1 id="admin-text">Welcome, admin</h1>
+
+    <h1 class="changeText">Hello JS</h1>
+    <h1>Hello JS</h1>
+    <h1>Hello JS</h1>
+    <section><h1>Hello JS</h1></section>
+    <p class="changeText">Hello</p>
+
+    <script>
+      //DOM ==> document object model
+      // collection array
+
+      // var h1List = document.getElementsByTagName("h1");
+      //var changeTextList = document.getElementsByClassName("changeText");
+      // HTMlCollection i.e array
+
+      /*
+         for (var value of changeTextList) {
+         value.innerHTML = "This is from js";
+       }
+       */
+
+      var adminText = document.getElementById("admin-text");
+
+      setTimeout(function () {
+        adminText.innerHTML = "Welcome, admin Shital";
+      }, 2 * 1000);
+
+      /*
+        document.querySelector()
+        document.querySelectorAll()*/
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 8</title>
+  </head>
+
+  <body>
+    <!-- contact list with print and delete -->
+    <!--  2 input & 1 button-->
+    <!-- on click 2 inputs values
+            ==> {cName:"", cNumber} 
+                ===> [contactList].push({})-->
+    <!-- print record in table -->
+    <!-- delete contact -->
+
+    <input type="text" placeholder="Enter Contact Name" id="cName" />
+    <input type="text" placeholder="Enter Contact Number" id="cNumber" />
+    <button onclick="addContact()">Add Contact</button>
+    <script>
+      var contactList = [];
+      var cName = document.querySelector("#cName"); // 1st input
+      var cNumber = document.querySelector("#cNumber"); // 2nd input
+
+      function addContact() {
+        var newContact = {
+          cNameValue: cName.value,
+          cNumberValue: cNumber.value,
+        };
+
+        contactList.push(newContact);
+        console.log(contactList);
+      }
+    </script>
+  </body>
+</html>

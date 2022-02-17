@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 3</title>
+  </head>
+  <body>
+    <script>
+      // general/common function
+      function add(paraOne, ParaTwo, funDef) {
+        funDef("actualPara");
+        //code
+      }
+      add("paraOne", 10, function () {}); // function call
+
+      // expression/anonymous function
+      var varOne = function (paraOne) {
+        // code
+      };
+      varOne("paraOne");
+
+      //inline/callback function
+      add(10, "hello", function (formalPara) {
+        //code
+      });
+
+      // immediate invoke expression function IIEF
+      (function (data) {
+        //code
+        console.log("IIEF", data);
+      })("hello");
+    </script>
+  </body>
+</html>

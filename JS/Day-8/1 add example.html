@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 8</title>
+  </head>
+
+  <body>
+    <!--  Add Example -->
+    <input type="text" placeholder="Enter 1st Number" id="FNumber" />
+    <input type="text" placeholder="Enter 2nd Number" id="SNumber" />
+
+    <button onclick="makeAdd()">Make Add</button>
+    <p class="result-text">The Result is as <span>0 + 0 = 0</span></p>
+    <script>
+      //DRY
+      var FNumber = document.querySelector("#FNumber");
+      var SNumber = document.querySelector("#SNumber");
+      var resultText = document.querySelector(".result-text > span");
+
+      function makeAdd() {
+        var result = Number(FNumber.value) + Number(SNumber.value); // default .value string
+        resultText.innerHTML = `${FNumber.value} + ${SNumber.value} = ${result}`; //50 + 700 = 750
+        resetInput();
+      }
+
+      function resetInput() {
+        FNumber.value = "";
+        SNumber.value = "";
+      }
+    </script>
+  </body>
+</html>

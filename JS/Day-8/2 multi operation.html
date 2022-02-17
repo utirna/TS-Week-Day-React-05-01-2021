@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 8</title>
+  </head>
+
+  <body>
+    <!--  Add Example -->
+    <input type="text" placeholder="Enter 1st Number" id="FNumber" />
+    <input type="text" placeholder="Enter 2nd Number" id="SNumber" />
+
+    <select id="operation-type">
+      <option value="">----Select Option ----</option>
+      <option value="add">Add</option>
+      <option value="sub">Sub</option>
+      <option value="div">Div</option>
+      <option value="mult">Mult</option>
+    </select>
+
+    <button onclick="makeAdd()">Calculate</button>
+    <p class="result-text">The Result is as <span>0 + 0 = 0</span></p>
+    <script>
+      //DRY
+      var FNumber = document.querySelector("#FNumber"); // 1st input
+      var SNumber = document.querySelector("#SNumber"); // 2nd input
+      var resultText = document.querySelector(".result-text > span"); // span for result
+      var operationType = document.querySelector("#operation-type"); // select input
+
+      function makeAdd() {
+        var fValue = Number(FNumber.value);
+        var sValue = Number(SNumber.value);
+        var optType = operationType.value;
+
+        // switch because we are having multiple option
+        switch (optType) {
+          case "add":
+            resultText.innerHTML = `${fValue} + ${sValue} = ${fValue + sValue}`;
+            break;
+
+          case "sub":
+            resultText.innerHTML = `${fValue} - ${sValue} = ${fValue - sValue}`;
+            break;
+
+          case "div":
+            if (sValue === 0) {
+              // === data & dataType
+              alert("cant divide by zero");
+              return false; // execution stop
+            }
+            resultText.innerHTML = `${fValue} / ${sValue} = ${fValue / sValue}`;
+            break;
+
+          case "mult":
+            resultText.innerHTML = `${fValue} x ${sValue} = ${fValue * sValue}`;
+            break;
+
+          default:
+            alert("Please select type");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 3</title>
+  </head>
+  <body>
+    <script>
+      // function
+      var varOne = 5;
+      var varTwo = 10; // global var
+      var result = 0;
+
+      function sub(numberOne, numberTwo) {
+        // result local var
+        var result = numberTwo - numberOne; // lexical scope var
+      } // function definition | 100% local var | pure function
+
+      result = 15;
+      sub(varOne, varTwo); // function call | actual parameters
+      console.log(result);
+    </script>
+  </body>
+</html>

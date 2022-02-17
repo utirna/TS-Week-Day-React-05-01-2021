@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 7</title>
+  </head>
+
+  <body>
+    <!--  -->
+    <button onclick="incCounter()">INC Counter</button>
+    <button onclick="decCounter()">DEC Counter</button>
+
+    <p class="counter-text">Counter Count is <span>0</span></p>
+    <script>
+      // DRY
+      var count = 0;
+      var span = document.querySelector(".counter-text > span");
+
+      function incCounter() {
+        count += 1;
+        span.innerHTML = count;
+      }
+
+      function decCounter() {
+        count -= 1;
+        span.innerHTML = count;
+      }
+    </script>
+  </body>
+</html>

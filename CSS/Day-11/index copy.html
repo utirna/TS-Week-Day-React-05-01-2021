@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day-7</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        width: 30vw;
+        height: 40vh;
+        border: 1px solid black;
+      }
+      .card-body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .img-thumbnail {
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+      }
+      .offer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        transition: opacity 0.5s;
+        font-size: 2rem;
+        color: rgb(247, 252, 0);
+      }
+      .price {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        font-size: 1.5rem;
+        background-color: rgb(247, 11, 196);
+        text-align: center;
+        padding: 0.2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        transition: top 0.5s;
+      }
+      .old-price {
+        font-size: 1rem;
+        color: white;
+        text-decoration: line-through;
+      }
+      .new-price {
+        color: white;
+      }
+
+      .card-body:hover .offer {
+        opacity: 0;
+      }
+      .card-body:hover .price {
+        top: 86%;
+      }
+      .best-prices {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        transform: rotateZ(45deg) translate(35px, -10px);
+        padding: 0.2rem 1.5rem;
+
+        text-align: center;
+        border: 1px dashed black;
+        background-color: green;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <section class="card">
+        <section class="card-body">
+          <h1 class="offer">50% off</h1>
+          <p class="price">
+            <span class="old-price">1000 /-</span>
+            <span class="new-price">500 /-</span>
+          </p>
+          <img src="/images/bag.jpg" alt="" class="img-thumbnail" />
+        </section>
+      </section>
+      <section class="card">
+        <section class="card-body">
+          <h1 class="offer">50% off</h1>
+          <p class="price">
+            <span class="old-price">1000 /-</span>
+            <span class="new-price">500 /-</span>
+          </p>
+          <img src="/images/bag.jpg" alt="" class="img-thumbnail" />
+        </section>
+      </section>
+      <section class="card">
+        <section class="card-body">
+          <p class="best-prices">Best Prices</p>
+          <h1 class="offer">50% off</h1>
+          <p class="price">
+            <span class="old-price">1000 /-</span>
+            <span class="new-price">500 /-</span>
+          </p>
+          <img src="/images/bag.jpg" alt="" class="img-thumbnail" />
+        </section>
+      </section>
+    </section>
+  </body>
+</html>

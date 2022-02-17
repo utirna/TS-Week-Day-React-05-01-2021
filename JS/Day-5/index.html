@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 5</title>
+  </head>
+  <body>
+    <script>
+      //collections of array & jsObject && array methods
+      var BatchList = [
+        {
+          b_name: "React (MERN) Full Stack",
+          b_time: "8:00 am",
+          b_duration: 6,
+          student_count: 10,
+        },
+        {
+          b_name: "React (MERN) Full Stack",
+          b_time: "11:00 am",
+          b_duration: 3,
+          student_count: 15,
+        },
+        {
+          b_name: "Font End",
+          b_time: "5:00 pm",
+          b_duration: 1.5,
+          student_count: 30,
+        },
+        {
+          b_name: "Node JS API",
+          b_time: "3:00 pm",
+          b_duration: 3,
+          student_count: 5,
+        },
+      ]; // object array | JSON array
+      console.log(BatchList);
+
+      // search data ===> find(),findIndex(),filter()
+      var search = "React (MERN) Full Stack1";
+
+      var foundBatch = BatchList.find(function (batch) {
+        return batch.b_name === search;
+      }); // return only once , in return we get object on success
+      // if data dose't we get undefined
+
+      var foundBatchIndex = BatchList.findIndex(function (batch) {
+        return batch.b_name === search;
+      }); // return only once , in return we get index number on success
+      // if data dose't we get -1 value
+
+      //print data
+      console.log(foundBatchIndex);
+    </script>
+  </body>
+</html>

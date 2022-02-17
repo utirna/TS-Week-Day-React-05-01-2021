@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 3</title>
+  </head>
+  <body>
+    <script>
+      var numberOne = 10;
+      var numberTwo = 20;
+
+      // add
+      function add(varOne, varTwo) {
+        var result = varOne + varTwo;
+        return result;
+      }
+
+      // div
+      var div = function (varOne, varTwo) {
+        var result = varOne / varTwo;
+        return result;
+      };
+
+      // mul
+      function mul(varOne, varTwo) {
+        var result = varOne * varTwo;
+        return result;
+      }
+
+      var addResult = add(numberOne, numberTwo); //10,20 = 30
+
+      var divResult = div(addResult, numberTwo); //30,20 = 1.5
+
+      var mulResult = mul(divResult, numberTwo); //1.5,20 = 30
+
+      console.log(mulResult); // final result
+
+      console.log("hello");
+    </script>
+  </body>
+</html>
