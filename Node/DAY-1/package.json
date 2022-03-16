@@ -1,0 +1,19 @@
+{
+  "name": "day-1",
+  "version": "1.0.0",
+  "description": "this is my 1st project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "react"
+  ],
+  "author": "Deepak",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

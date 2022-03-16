@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ES6 DAy-1</title>
+  </head>
+  <body>
+    <h1>ES6</h1>
+    <input type="text" id="input" />
+    <button id="btn">CLICK</button>
+    <script src="/js/main.js" data-id="1"></script>
+    <script>
+      let btn = document.querySelector("#btn");
+      let input = document.querySelector("#input");
+      btn.addEventListener("click", function (event) {
+        console.log(input.value);
+      });
+    </script>
+  </body>
+</html>

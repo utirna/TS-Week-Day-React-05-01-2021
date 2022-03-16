@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+  </head>
+  <body>
+    <script>
+      //promises custom
+
+      var numberOne = 10;
+      var numberTwo = 20;
+
+      function add(varOne, varTwo) {
+        return new Promise(function (resolve, reject) {
+          var result = varOne + varTwo;
+          resolve(result);
+        });
+      }
+
+      function div(varOne, varTwo, callback) {
+        var result = varOne / varTwo;
+        callback(result);
+      }
+
+      function sub(varOne, varTwo, callback) {
+        var result = varOne - varTwo;
+        callback(result);
+      }
+
+      // single promise
+      add(numberOne, numberTwo)
+        .then(function (result) {
+          console.log(result);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

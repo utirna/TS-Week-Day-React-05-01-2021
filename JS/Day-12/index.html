@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <button onclick="clearList()">Clear</button>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody id="user-list-tbody">
+          <tr>
+            <td colspan="4">
+              click to <a href="#" onclick="ajax()">Get Data</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script>
+      var userListTbody = document.querySelector("#user-list-tbody");
+      var usersList = localStorage.getItem("uList");
+
+      if (usersList !== null) {
+        usersList = JSON.parse(usersList);
+        printUser();
+      }
+
+      function clearList() {
+        //localStorage.clear();
+        localStorage.removeItem("uList");
+        window.location.reload();
+      }
+
+      // fetch
+      async function ajax() {
+        try {
+          var response = await fetch(
+            "https://jsonplaceholder.typicode.com/users"
+          );
+          var data = await response.text();
+
+          localStorage.setItem("uList", data);
+
+          data = JSON.parse(data); //static method
+
+          usersList = data;
+          printUser();
+        } catch (error) {}
+      }
+
+      function printUser() {
+        var rows = usersList
+          .map(function (user, index) {
+            return `<tr>
+                      <td>${index + 1}</td>
+                      <td>${user.name}</td>
+                      <td>${user.email}</td>
+                      <td>${user.website}</td>
+                    </tr>`;
+          })
+          .join("");
+
+        userListTbody.innerHTML = rows;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: auto;
+        margin-top: 1rem;
+      }
+      table td,
+      table th {
+        border: 1px solid black;
+        padding: 0.5rem 1rem;
+      }
+
+      #id {
+      }
+      .class {
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- contact list with print and delete -->
+    <!--  2 input & 1 button-->
+    <!-- on click 2 inputs values
+            ==> {cName:"", cNumber} 
+                ===> [contactList].push({})-->
+    <!-- print record in table -->
+    <!-- delete contact -->
+
+    <input
+      type="text"
+      value="Deepak"
+      placeholder="Enter Contact Name"
+      id="cName"
+    />
+    <input
+      type="text"
+      value="9874569874"
+      placeholder="Enter Contact Number"
+      id="cNumber"
+    />
+    <button onclick="addContact()">Add Contact</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Contact Name</th>
+          <th>Contact Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-id"></tbody>
+    </table>
+    <script>
+      var contactList = [];
+      var cName = document.querySelector("#cName"); // 1st input
+      var cNumber = document.querySelector("#cNumber"); // 2nd input
+      var tbodyId = document.querySelector("#tbody-id"); // call tbody to add data
+
+      function addContact() {
+        var newContact = {
+          cNameValue: cName.value,
+          cNumberValue: cNumber.value,
+        };
+
+        contactList.push(newContact);
+        printTable();
+      }
+
+      function printTable() {
+        var rows = contactList.map(function (contact, index) {
+          return `<tr>
+                      <td>${index + 1}</td>
+                      <td>${contact.cNameValue}</td>
+                      <td>${contact.cNumberValue}</td>
+                      <td> <button onclick="removeContact(${index})">DEL</button></td>
+                    </tr>`;
+        });
+
+        tbodyId.innerHTML = rows.join("");
+      }
+
+      function removeContact(index) {
+        var action = confirm("Are you sure to remove contact ?");
+        if (action === true) {
+          contactList.splice(index, 1); // delete the contact
+          printTable(); // repaint the table
+        }
+      }
+    </script>
+  </body>
+</html>

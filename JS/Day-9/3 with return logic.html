@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+  </head>
+  <body>
+    <script>
+      //with return logic
+      var numberOne = 10;
+      var numberTwo = 20;
+
+      function add(varOne, varTwo) {
+        var result = varOne + varTwo;
+        return result;
+      }
+
+      function div(varOne, varTwo) {
+        var result = varOne / varTwo;
+        return result;
+      }
+
+      function sub(varOne, varTwo) {
+        var result = varOne - varTwo;
+        return result;
+      }
+
+      // function call
+      var addResult = add(numberOne, numberTwo);
+      var divResult = div(addResult, 7);
+      var subResult = sub(divResult, 5);
+      console.log("final result", subResult);
+    </script>
+  </body>
+</html>

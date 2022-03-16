@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="ajax()">Get Data</button>
+    <div id="ajax-data-container"></div>
+
+    <script>
+      var ajaxDataContainer = document.querySelector("#ajax-data-container");
+      // fetch
+      async function ajax() {
+        try {
+          var response = await fetch("/home.html");
+          var data = await response.text();
+          ajaxDataContainer.innerHTML = data;
+        } catch (error) {}
+        console.log("ajax");
+      }
+
+      ajax();
+      console.log("hi");
+    </script>
+  </body>
+</html>

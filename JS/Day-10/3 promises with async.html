@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+  </head>
+  <body>
+    <script>
+      //promises with async
+
+      var numberOne = 10;
+      var numberTwo = 10;
+
+      async function add(varOne, varTwo) {
+        var result = varOne + varTwo;
+        return result;
+      }
+
+      async function div(varOne, varTwo) {
+        if (varTwo === 0) {
+          return Promise.reject("can't div by zero"); // static method
+        } else {
+          var result = varOne / varTwo;
+          return result;
+        }
+      }
+
+      async function sub(varOne, varTwo) {
+        var result = varOne - varTwo;
+        return result;
+      }
+
+      // multi/chaining  promise
+      add(numberOne, numberTwo)
+        .then(function (addResult) {
+          console.log("add", addResult);
+          return div(addResult, numberTwo);
+        })
+        .then(function (divResult) {
+          console.log("div", divResult);
+          return sub(divResult, numberTwo);
+        })
+        .then(function (subResult) {
+          console.log("sub", subResult);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

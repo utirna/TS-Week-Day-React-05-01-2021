@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+  </head>
+  <body>
+    <script>
+      //with callback logic
+      var numberOne = 10;
+      var numberTwo = 20;
+
+      function add(varOne, varTwo, callback) {
+        var result = varOne + varTwo;
+        callback(result);
+      }
+
+      function div(varOne, varTwo, callback) {
+        var result = varOne / varTwo;
+        callback(result);
+      }
+
+      function sub(varOne, varTwo, callback) {
+        var result = varOne - varTwo;
+        callback(result);
+      }
+
+      // function call
+      add(numberOne, numberTwo, function (addResult) {
+        div(addResult, 0, function (divResult) {
+          sub(divResult, 5, function (subResult) {
+            console.log("final result", subResult);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

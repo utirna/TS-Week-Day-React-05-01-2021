@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter 1st number" id="fNumber" />
+    <input type="text" placeholder="Enter 2nd number" id="sNumber" />
+
+    <button onclick="calculation()">calculate</button>
+
+    <p class="result-text">Result of :<span>0</span></p>
+    <script>
+      //promises with async await
+
+      var fNumber = document.querySelector("#fNumber");
+      var sNumber = document.querySelector("#sNumber");
+      var resultText = document.querySelector(".result-text > span");
+
+      async function add(varOne, varTwo) {
+        var result = varOne + varTwo;
+        return result;
+      }
+
+      async function div(varOne, varTwo) {
+        if (varTwo === 0) {
+          return Promise.reject("can't div by zero"); // static method
+        } else {
+          var result = varOne / varTwo;
+          return result;
+        }
+      }
+
+      async function sub(varOne, varTwo) {
+        var result = varOne - varTwo;
+        return result;
+      }
+
+      async function calculation() {
+        var numberOne = Number(fNumber.value);
+        var numberTwo = Number(sNumber.value);
+        try {
+          var addResult = await add(numberOne, numberTwo);
+          var divResult = await div(addResult, numberTwo);
+          var subResult = await sub(divResult, numberTwo);
+
+          resultText.innerHTML = `((${numberOne} + ${numberTwo}) / ${numberTwo}) - ${numberTwo} = ${subResult}`;
+
+          fNumber.value = "";
+          sNumber.value = "";
+        } catch (error) {
+          console.error(error);
+          alert(error);
+        }
+      }
+    </script>
+  </body>
+</html>

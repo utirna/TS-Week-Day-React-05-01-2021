@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+  </head>
+  <body>
+    <script>
+      //promises with async await
+
+      var numberOne = 10;
+      var numberTwo = 0;
+
+      async function add(varOne, varTwo) {
+        var result = varOne + varTwo;
+        return result;
+      }
+
+      async function div(varOne, varTwo) {
+        if (varTwo === 0) {
+          return Promise.reject("can't div by zero"); // static method
+        } else {
+          var result = varOne / varTwo;
+          return result;
+        }
+      }
+
+      async function sub(varOne, varTwo) {
+        var result = varOne - varTwo;
+        return result;
+      }
+
+      async function calculation() {
+        try {
+          var addResult = await add(numberOne, numberTwo);
+          var divResult = await div(addResult, numberTwo);
+          var subResult = await sub(divResult, numberTwo);
+          console.log("sub", subResult);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      calculation();
+    </script>
+  </body>
+</html>

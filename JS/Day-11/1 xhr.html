@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="ajax()">Get Data</button>
+    <div id="ajax-data-container"></div>
+
+    <script>
+      var ajaxDataContainer = document.querySelector("#ajax-data-container");
+      //promises with async await
+      // xhr
+      /*xml http request (asynchronous javascript and xml)*/
+
+      function ajax() {
+        /*xhr*/
+        var xhr = new XMLHttpRequest(); //1st ==> 0
+        // init/open connection
+        /*GET POST DELETE PUT*/
+        xhr.open("GET", "/home.html"); // 2nd ===> 1
+        // send() request
+        xhr.send(); // 3rd states ====> 2
+        // handler to handel the response
+
+        // response will ht to client //4th state ===> 3
+        //on connection close 5th state ===> 4
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              var data = xhr.responseText;
+              ajaxDataContainer.innerHTML = data;
+            } else {
+              alert(`Request Error Occurs: ${xhr.status} ${xhr.statusText}`);
+            }
+          }
+        };
+      }
+
+      // fetch
+    </script>
+  </body>
+</html>

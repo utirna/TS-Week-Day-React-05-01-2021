@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Day 9</title>
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="ajax()">Get Data</button>
+    <section>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody id="user-list-tbody">
+          <tr>
+            <td>1</td>
+            <td>demo</td>
+            <td>demo@gmail.com</td>
+            <td>www.demo.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script>
+      var text = {
+        name: "testing shastra",
+      };
+      // save new data
+
+      localStorage.setItem("visit ", 1); // object ===> string
+
+      // update data
+      //localStorage.setItem("company", "hello");
+
+      // delete data (single)
+      //localStorage.removeItem("company1");
+
+      // delete data (all)
+      //localStorage.clear();
+
+      // get data
+      var data = localStorage.getItem("company3");
+      var data = JSON.parse(data); // string ==> jsObject
+      // if key data is not available we get null as data
+      console.log(data);
+    </script>
+  </body>
+</html>
